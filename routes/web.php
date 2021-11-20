@@ -14,16 +14,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'PagesController@index');
-
-Route::get('/', function () {
-    return view('client.index');
-});
-
-Route::get('/employer', function () {
-    return view('client.employer');
-});
-
-Route::get('/applicant', function () {
-    return view('client.applicant');
-});
+Route::get('/applicant', 'PagesController@applicant');
+Route::get('/employer', 'PagesController@employer');
+Route::get('/dashboard', 'PagesController@dashboard');
 
