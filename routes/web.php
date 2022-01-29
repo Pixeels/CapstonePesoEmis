@@ -14,7 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'PagesController@index');
-Route::get('/applicant', 'PagesController@applicant');
-Route::get('/employer', 'PagesController@employer');
+Route::get('/emis/public/applicant', 'PagesController@applicant');
+Route::get('/emis/public/employer', 'PagesController@employer');
 Route::get('/dashboard', 'PagesController@dashboard');
 
+Route::resource('posts', 'PostsController');
