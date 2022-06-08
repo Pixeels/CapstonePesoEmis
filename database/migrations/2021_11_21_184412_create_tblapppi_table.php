@@ -29,7 +29,7 @@ class CreateTblapppiTable extends Migration
             $table->string('AProvince', 25);
             $table->enum('ACivilStatus', ['Single', 'Married', 'Widowed', 'Separated', 'Live-in']);
             $table->integer('ATin', 9);
-            $table->integer('AGsis', );
+            $table->integer('AGsis', 11);
             $table->string('AEmailAdd')->unique();
             $table->integer('ALandline', 9);
             $table->integer('ACellphone', 11);

@@ -30,8 +30,6 @@ class CreateTbleqrTable extends Migration
             $table->string('EPrefRes');
             $table->string('EAcc', 100);
             $table->foreign('EstID')->references('EstID')->on('tblesd');
-
-
         });
     }
 
