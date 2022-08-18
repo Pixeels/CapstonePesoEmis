@@ -7,57 +7,259 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" id="bootstrap-css">
     <link rel="stylesheet" href="{{ asset('css/emp.css') }}">
 
 </head>
 
 <body>
     <form id="regForm" action="/action_page.php">
-        <h1>PESO EMPLOYMENT INFORMATION SYSTEM REGISTRATION FORM</h1>
+        <h1>Establishment Registration Form</h1>
 
 
         <!-- One "tab" for each step in the form: -->
 
         <div class="tab">
-            <h4>I. Personal Information</h4>
-            <div>
-                <p><input placeholder="SURNAME" oninput="this.className = ''" name="ASurname"></p>
-                <p><input placeholder="FIRSTNAME" oninput="this.className = ''" name="AFirstname"></p>
-                <p><input placeholder="MIDDLENAME" oninput="this.className = ''" name="AMiddlename"></p>
-                <p><input placeholder="SUFFIX(Ex: Sr., Jr., III, etc.)" oninput="this.className = ''" name="ASuffix">
-                </p>
-            </div>
-
-            <div class="row">
-                <div class="col">
-                    <div class="col-md-6">
-                        <p>Date of Birth</p>
-                        <p><input type="date" id="birthday" name="birthday"></p>
+            <div class="container-fluid pt-4">
+                {{-- <center>
+                  <h4><b>BLAZER 2022</b></h4>
+                  <p>Central Mindanao University</p>
+                </center> --}}
+                <form id="" class="form-horizontal">
+                    <div class="row">
+                        <div class="col-sm-12 mb-2">
+                         <h5 class="fs-15 fc-black">I. ESTABLISHMENT DETAILS</h5>
+                         <hr>
+                        </div>
+                        <div class="col-md-4">
+                          <input class="form-control mb-3 input-box" type="text" name="firstName" placeholder="Establishment Name" style="text-transform: capitalize" value="" required="">
+                        </div>
+                        <div class="col-md-4">
+                          <input class="form-control mb-3 input-box" type="text" name="lastName" placeholder="Last name" value="" required="">
+                        </div>
+                        <div class="col-sm-3">
+                          <input class="form-control mb-3 input-box" type="text" name="middleName" placeholder="Middle name" value="">
+                        </div>
+                       
+                        <div class="col-md-4">
+                          <input class="form-control mb-3 signup-input2" type="text" name="nickname" placeholder="Nick name" value="" required="">
+                        </div>
+                        <div class="col-md-4">
+                          <input class="form-control mb-3 signup-input2" type="email" name="email" placeholder="University Email" value="" required="">
+                        
+                        </div>
+                        <div class="col-md-4">
+                          <select name="gender" id="gender" class="form-control mb-3 signup-input2" required="">
+                          <option value="">Gender</option>
+                          <option value="Male">Male</option>
+                          <option value="Female">Female</option>
+                        </select>
+                        </div>
+                        <div class="col-md-4">
+                          <input class="form-control mb-3 signup-input2" type="date" name="birthdate" id="birthdate" placeholder="Birthdate" onfocus="(this.type='date')" required="" max="2017-06-11">
+                        </div>
+                        <div class="col-md-4">
+                          <input class="form-control mb-3 signup-input2" type="number" name="mobileNumber" id="mobileNumber" placeholder="Mobile number" value="" required="">
+                        </div>
+                        <div class="col-md-4"><!--SPACE--></div>
+                        <div class="col-md-4">
+                          <h5 class="fs-13 ml-2">College</h5>
+                          <select name="college" id="college" class="form-control mb-3 signup-input2" required="">
+                          
+                          
+                        <option value=""></option><option value="621c4b835df1e88568585765">College of Agriculture</option><option value="621c4b835df1e88568585766">College of Arts and Sciences</option><option value="621c4b835df1e88568585767">College of Education</option><option value="621c4b835df1e88568585769">College of Business and Management</option><option value="621c4b835df1e8856858576a">College of Human Ecology</option><option value="621c4b835df1e8856858576b">College of Nursing</option><option value="621c4b835df1e8856858576c">College of Engineering</option><option value="621c4b835df1e8856858576d">College of Veterinary Medicine</option><option value="621c4b835df1e8856858576e">College of Forestry and Environmental Science</option><option value="621c4b835df1e8856858576f">College of Information Sciences and Computing</option></select>
+                        </div>
+                        <div class="col-md-4">
+                          <h5 class="fs-13 ml-2">Course</h5>
+                          <select name="course" id="course" class="form-control mb-3 signup-input2" required="">
+                            
+                            
+                          <option value=""></option></select>
+                        </div>
+                        <div class="col-sm-12 mb-2">
+                          <h5 class="fs-15 fc-black">Father's name</h5>
+                          <hr>
+                         </div>
+                         <div class="col-md-4">
+                          <input class="form-control mb-3 signup-input2" type="text" name="fatherfirstname" placeholder="First name" style="text-transform: capitalize" value="">
+                        </div>
+                        <div class="col-md-4">
+                          <input class="form-control mb-3 signup-input2" type="text" name="fatherlastname" placeholder="Last name" value="">
+                        </div>
+                        <div class="col-sm-4">
+                          <input class="form-control mb-3 signup-input2" type="text" name="fathermiddlename" placeholder="Middle name" value="">
+                        </div>
+                        <div class="col-sm-12 mb-2">
+                          <h5 class="fs-15 fc-black">Mother's name</h5>
+                          <hr>
+                       </div>
+                       <div class="col-md-4">
+                        <input class="form-control mb-3 signup-input2" type="text" name="motherfirstname" placeholder="First name" style="text-transform: capitalize" value="">
+                      </div>
+                      <div class="col-md-4">
+                        <input class="form-control mb-3 signup-input2" type="text" name="motherlastname" placeholder="Last name" value="">
+                      </div>
+                      <div class="col-sm-4">
+                        <input class="form-control mb-3 signup-input2" type="text" name="mothermiddlename" placeholder="Middle name" value="">
+                      </div>
+                        <div class="col-sm-12 mb-2">
+                          <h5 class="fs-15 fc-black">Home town</h5>
+                          <hr>
+                         </div>
+                        <div class="col-md-4">
+                          <input class="form-control mb-3 signup-input2" type="text" name="country" placeholder="Country" style="text-transform: capitalize" value="" required="">
+                        </div>
+                        <div class="col-md-4">
+                          <input class="form-control mb-3 signup-input2" type="text" name="province" placeholder="Province" style="text-transform: capitalize" value="" required="">
+                        </div>
+                        <div class="col-md-4">
+                          <input class="form-control mb-3 signup-input2" type="text" name="municipality" placeholder="Municipality" style="text-transform: capitalize" value="" required="">
+                        </div>
+                        <div class="col-md-4">
+                          <input class="form-control mb-3 signup-input2" type="text" name="barangay" placeholder="Barangay" style="text-transform: capitalize" value="" required="">
+                        </div>
+                        <div class="col-md-4">
+                          <input class="form-control mb-3 signup-input2" type="number" name="zipCode" id="zipCode" placeholder="Zip Code" style="text-transform: capitalize" value="" required="">
+                        </div>
+                        <div class="col-sm-12 mb-2">
+                          <hr>
+                       </div>
+                        <div class="col-md-4">
+                          <span class="fc-black"> Awards <span style="color: red"> (Separate with comma)</span></span>
+                          <br>
+                          <small class="fc-black">Top 5 Awards and Achievements</small>
+                          <textarea class="form-control mb-3 signup-input2 mt-2" rows="5" name="awards" id="awards"></textarea>
+                        </div>
+                        <div class="col-md-4">
+                          <span class="fc-black">School Affiliations and Positions <span style="color: red"> (Separate with comma)</span></span>
+                          <br>
+                          <small class="fc-black">Top 5 Highest University Affiliations and Organization Positions</small>
+                          <textarea class="form-control mb-3 signup-input2" rows="5" name="affiliation" id="affiliation">                    </textarea>
+                        </div>
+                        <div class="col-md-4">
+                          <span class="fc-black">Motto in Life</span>
+                          <textarea class="form-control mb-3 signup-input2" rows="5" name="motto" id="motto" style="height: 129px;">                  </textarea>
+                        </div>
+                        <div class="col-md-4 displayNone">
+                          <span class="fc-black">Message
+                            <span id="messageCount" style="color: red; margin-left: 5px">(280 Characters)</span>
+                          </span>
+                          <textarea placeholder="" class="form-control mb-3 signup-input2" rows="7" name="message" id="message">                </textarea>
+                        </div>
+                        <div class="col-sm-12 mb-2">
+                          <h5 class="fs-15 fc-black">Login account</h5>
+                          <hr>
+                         </div>
+                         <div class="col-md-4 mb-3">
+                          <input class="form-control signup-input2" type="number" name="studentId" id="studentId" placeholder="Student ID" value="" required="">
+                            <span style="color: red; font-size: 10px" id="studentIdError" class="ml-2 hidden">Student ID already used!
+                          </span>
+                         </div>
+                         <div class="col-md-4 mb-3">
+                          <input class="form-control signup-input2" type="number" name="restudentId" id="restudentId" placeholder="Retype student ID" value="" required="">
+                          <span style="color: red; font-size: 10px" id="restudentIdError" class="ml-2 hidden">Whoops, these don't match
+                          </span>
+                         </div>
+                         <div class="col-md-4"><!--SPACE--></div>
+                         <div class="col-md-4 mb-3">
+                          <input class="form-control signup-input2" type="password" name="password" id="password" placeholder="Password" value="" required="">
+                         </div>
+                         <div class="col-md-4 mb-3">
+                          <input class="form-control signup-input2" type="password" name="repassword" id="repassword" placeholder="Retype password" value="" required="">
+                          <span style="color: red; font-size: 10px" id="repasswordError" class="ml-2 hidden">Whoops, these don't match
+                          </span>
+                         </div>
+                         <div class="col-md-4"><!--SPACE--></div>
+                         <div class="col-md-4">
+                          <button id="submitbtn" type="submit" class="btn customize-button2 fw-bold mt-3 mb-4">Sign up</button>
+                         </div>
                     </div>
-                </div>
+                </form>
+              </div>
+        </div>
 
-                <div class="col">
-                    <p>Place of Birth</p>
-                    <input placeholder="PLACE OF BIRTH" oninput="this.className = ''" name="AMiddlename">
 
-                </div>
 
-                <div class="col">
-                    <p>Sex</p>
-                    <div class="input-group mb-2">
+
+
+
+
+        <div class="tab">
+            <h4>II. JOB PREFERENCE</h4>
+
+            <div>
+                <div class="row">
+                    <div class="col6 prefoccupation">
+                        <thead>PREFERRED OCCUPATION</thead>
+
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">1.</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">2.</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">3.</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">4.</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+
+                    </div>
+
+                    <div class="col6 preflocation">
+                        <thead>PREFERRED WORK LOCATION</thead>
                         <div class="row">
                             <div class="col">
-                                <div class="form-check form-check-inline mt-1 mx-4">
-                                    <input class="form-check-input" type="radio" name="sex" id="inlineRadio1"
-                                        value="option1">
-                                    <label class="form-check-label" for="inlineRadio1">Male</label>
+                                <div class="">
+                                    <input type="checkbox" class="form-check-input" id="exampleCheck1" name="workloc"
+                                        value="Local">
+                                    <label class="form-check-label" for="exampleCheck1">Local, specify
+                                        cities/municipalities.</label>
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">1.</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-default">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">2.</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-default">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">3.</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-default">
                                 </div>
                             </div>
                             <div class="col">
-                                <div class="form-check form-check-inline mt-1">
-                                    <input class="form-check-input" type="radio" name="sex" id="inlineRadio2"
-                                        value="option2">
-                                    <label class="form-check-label" for="inlineRadio2">Female</label>
+                                <input type="checkbox" class="form-check-input" id="exampleCheck1" name="workloc"
+                                    value="Local">
+                                <label class="form-check-label" for="exampleCheck1">Overseas,specify countries:
+                                </label>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">1.</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-default">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">2.</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-default">
+                                </div>
+                                <div class="input-group mb-3">
+                                    <span class="input-group-text" id="inputGroup-sizing-default">3.</span>
+                                    <input type="text" class="form-control" aria-label="Sizing example input"
+                                        aria-describedby="inputGroup-sizing-default">
                                 </div>
                             </div>
                         </div>
@@ -65,286 +267,88 @@
                 </div>
             </div>
 
-            <h5 class="mt-2 fw-bold">Present Address</h5>
-            <div class="row">
-                <div class="col">
-                    <p><input placeholder="" oninput="this.className = ''" name="ASurname">House No./ Street
-                        Village</p>
-                </div>
-                <div class="col">
-                    <p><input placeholder="" oninput="this.className = ''" name="ASurname">Barangay</p>
-                </div>
-                <div class="col">
-                    <p><input placeholder="" oninput="this.className = ''" name="ASurname">Municipality/City </p>
-                </div>
-                <div class="col">
-                    <p><input placeholder="" oninput="this.className = ''" name="ASurname">Province</p>
-                </div>
-            </div>
-
-            <h5 class="mt-2 fw-bold">Civil Status</h5>
-            <div class="input-group mb-2 mt-1 d-flex">
-                <div class="form-check form-check-inline mt-1 mx-4">
-                    <input class="form-check-input" type="radio" name="civilstatus" id="inlineRadio3" value="option1">
-                    <label class="form-check-label" for="inlineRadio2">Single</label>
-                </div>
-                <div class="form-check form-check-inline mt-1">
-                    <input class="form-check-input" type="radio" name="civilstatus" id="inlineRadio4" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">Married</label>
-                </div>
-                <div class="form-check form-check-inline mt-1">
-                    <input class="form-check-input" type="radio" name="civilstatus" id="inlineRadio4" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">Widowed</label>
-                </div>
-                <div class="form-check form-check-inline mt-1">
-                    <input class="form-check-input" type="radio" name="civilstatus" id="inlineRadio4" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">Separated</label>
-                </div>
-                <div class="form-check form-check-inline mt-1">
-                    <input class="form-check-input" type="radio" name="civilstatus" id="inlineRadio4" value="option2">
-                    <label class="form-check-label" for="inlineRadio2">Live-in</label>
-                </div>
-            </div>
-
-            <h5 class="mt-3 fw-bold">Religion</h5>
-            <p><input placeholder="" oninput="this.className = ''" name="ASurname"></p>
-
-            <div class="row">
-              <div class="col">
-                <h6>TIN</h6>
-                <p><input placeholder="" oninput="this.className = ''" name="ASurname"></p>
-              </div>
-              <div class="col">
-                <h6>GSIS/SSS ID NO. </h6>
-                <p><input placeholder="" oninput="this.className = ''" name="ASurname"></p>
-              </div>
-              <div class="col">
-                <h6>PAG-IBIG NO. </h6>
-                <p><input placeholder="" oninput="this.className = ''" name="ASurname"></p>
-              </div>
-              <div class="col">
-                <h6>PHILHEALTH NO.</h6>
-                <p><input placeholder="" oninput="this.className = ''" name="ASurname"></p>
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="col">
-                <h6>HEIGHT</h6>
-                <p><input placeholder="" oninput="this.className = ''" name="ASurname"></p>
-              </div>
-              <div class="col">
-                <h6>EMAIL ADDRESS</h6>
-                <p><input placeholder="" oninput="this.className = ''" name="ASurname"></p>
-              </div>
-              <div class="col">
-                <h6>LANDLINE NUMBER</h6>
-                <p><input placeholder="" oninput="this.className = ''" name="ASurname"></p>
-              </div>
-              <div class="col">
-                <h6>CELLPHONE NUMBER</h6>
-                <p><input placeholder="" oninput="this.className = ''" name="ASurname"></p>
-              </div>
-            </div>
-
-
-            <h5>Disablity</h5>
-            <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
-              <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
-              <label class="btn btn-outline-primary" for="btncheck1">Visual</label>
-            
-              <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
-              <label class="btn btn-outline-primary" for="btncheck2">Hearing</label>
-            
-              <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
-              <label class="btn btn-outline-primary" for="btncheck3">Speech</label>
-
-              <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
-              <label class="btn btn-outline-primary" for="btncheck4">Physical</label>
-            </div>
-            <p class="mt-2"><input placeholder="Others, specify: " oninput="this.className = ''" name="ASurname"></p>
-
-            <h5>Employment Status/Type</h5>
-            <div class="row">
-              <div class="col-6 empstatus1">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    Employed
-                  </label>
-                </div>
-                
-                <div class="mt-3">
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      Wage Employed
-                    </label>
-                  </div>
-  
-                  <div class="form-check">
-                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                    <label class="form-check-label" for="flexRadioDefault1">
-                      Self Employed
-                    </label>
-                  </div>
-                </div>
-
-              </div>
-
-              <div class="col-6 container empstatus2">
-                <div class="form-check">
-                  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    Unemployed
-                  </label>
-                </div>
-
-                <div class="row container">
-                  <div class="col containe">
-                    <div class="mt-3">
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          New Entrant/Fresh Graduate 
-                        </label>
-                      </div>
-      
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          Finished Contract
-                        </label>
-                      </div>
-
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          Resigned
-                        </label>
-                      </div>
-      
-                      <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                        <label class="form-check-label" for="flexRadioDefault1">
-                          Retired 
-                        </label>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col mt-3">
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                      <label class="form-check-label" for="flexRadioDefault1">
-                        Terminated/Laidoff(local) 
-                      </label>
-                    </div>
-
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                      <label class="form-check-label" for="flexRadioDefault1">
-                        Terminated/Laidoff(abroad) specify country
-                      </label>
-                      <p><input placeholder="" oninput="this.className = ''" name="ASurname"></p>
-                    </div>
-
-                    <div class="form-check">
-                      <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                      <label class="form-check-label" for="flexRadioDefault1">
-                        Others, specify 
-                      </label>
-                      <p><input placeholder="" oninput="this.className = ''" name="ASurname"></p>
-                    </div>
-                  </div>
-
-                </div>
-
-               
-
-                </div>
-              </div>
-            
-            </div>
-            
-            <div class="row">
-              <div class="col">
-                <p>Are you actively looking for work?</p>
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    Yes
-                  </label>
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    No
-                  </label>
-                  <p>How long have you been looking for work?<input placeholder="" oninput="this.className = ''" name="ASurname"></p>
-
-              </div>
-
-              <div class="col">
-                <p>Willing to work immediately? </p>
-                <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    Yes
-                  </label>
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    No
-                  </label>
-                <p>If no when?<input placeholder="" oninput="this.className = ''" name="ASurname"></p>
-              </div>
-            </div>
-            
             <div>
-              <p>Are you a 4Ps beneficiary?</p>
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    Yes
-                  </label>
-              <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
-                  <label class="form-check-label" for="flexRadioDefault1">
-                    No
-                  </label>
-              <p>If yes, Household ID No.<input placeholder="" oninput="this.className = ''" name="ASurname"></p>    
-              
-                
-            </div> 
+                <div class="row">
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Expected Salary
+                                (Range)</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Passport No.</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="input-group mb-3">
+                            <span class="input-group-text" id="inputGroup-sizing-default">Expiry date</span>
+                            <input type="text" class="form-control" aria-label="Sizing example input"
+                                aria-describedby="inputGroup-sizing-default">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+
+
+
+        <div class="tab">
             
+        </div>
+
+
+        <div class="tab">
+
+        </div>
+
+        <div class="tab">
             
-
-
-
-
-
-
-
-
-
         </div>
 
+        <div class="tab">
+            
+        </div>
 
-        <div class="tab">Contact Info:
-            <p><input placeholder="E-mail..." oninput="this.className = ''" name="email"></p>
-            <p><input placeholder="Phone..." oninput="this.className = ''" name="phone"></p>
-        </div>
-        <div class="tab">Birthday:
-            <p><input placeholder="dd" oninput="this.className = ''" name="dd"></p>
-            <p><input placeholder="mm" oninput="this.className = ''" name="nn"></p>
-            <p><input placeholder="yyyy" oninput="this.className = ''" name="yyyy"></p>
-        </div>
         <div class="tab">Login Info:
             <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
             <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
         </div>
+
+        <div class="tab">Login Info:
+            <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
+            <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
+        </div>
+
+        <div class="tab">Login Info:
+            <p><input placeholder="Username..." oninput="this.className = ''" name="uname"></p>
+            <p><input placeholder="Password..." oninput="this.className = ''" name="pword" type="password"></p>
+        </div>
+
+
         <div style="overflow:auto;">
             <div style="float:right;">
                 <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
                 <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
             </div>
         </div>
+
+
         <!-- Circles which indicates the steps of the form: -->
         <div style="text-align:center;margin-top:40px;">
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
+            <span class="step"></span>
             <span class="step"></span>
             <span class="step"></span>
             <span class="step"></span>
@@ -354,5 +358,7 @@
 </body>
 
 <script src="{{ asset('js\emp.js') }}"></script>
+<script src="{{ asset('js\jquery.min.js') }}"></script>
+<script src="{{ asset('js\bootstrap.min.js') }}"></script>
 
 </html>

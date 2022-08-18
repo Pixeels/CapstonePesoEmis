@@ -24,7 +24,7 @@ function nextPrev(n) {
   // This function will figure out which tab to display
   var x = document.getElementsByClassName("tab");
   // Exit the function if any field in the current tab is invalid:
-  if (n == 1 && !validateForm()) return false;
+//   if (n == 1 && !validateForm()) return false;
   // Hide the current tab:
   x[currentTab].style.display = "none";
   // Increase or decrease the current tab by 1:
@@ -70,3 +70,23 @@ function fixStepIndicator(n) {
   //... and adds the "active" class on the current step:
   x[n].className += " active";
 }
+
+
+
+//dsadsdasd
+var room = 1;
+function education_fields() {
+ 
+    room++;
+    var objTo = document.getElementById('education_fields')
+    var divtest = document.createElement("div");
+	divtest.setAttribute("class", "form-group removeclass"+room);
+	var rdiv = 'removeclass'+room;
+    divtest.innerHTML = 
+    '<div class="col nopadding"><div class="form-group"><div class="input-group mb-3"><span class="input-group-text" id="inputGroup-sizing-default">TRAINING/VOCATIONAL COURSE</span><input type="text" class="form-control" name="ACourse" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div></div></div><div class="col nopadding"><div class="form-group"><div class="input-group mb-3"><span class="input-group-text" id="inputGroup-sizing-default">DURATION</span><input type="text" class="form-control" name="ADuration" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div></div></div><div class="col nopadding"><div class="form-group"><div class="input-group mb-3"><span class="input-group-text" id="inputGroup-sizing-default">TRAINING/VOCATIONAL COURSE</span><input type="text" class="form-control" name="ATraIns" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div></div></div><div class="col nopadding"><div class="form-group"><div class="input-group mb-3"><span class="input-group-text" id="inputGroup-sizing-default">Certificates Received (NC I, NC II, NC II, NC IV, etc)</span><input type="text" class="form-control" name="ACertRec" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default"></div></div></div><div class="input-group-btn"> <button class="btn btn-danger" type="button" onclick="remove_education_fields('+ room +');"> <span class="glyphicon glyphicon-minus" aria-hidden="true"></span> </button></div></div></div></div><div class="clear"></div>';
+    
+    objTo.appendChild(divtest)
+}
+   function remove_education_fields(rid) {
+	   $('.removeclass'+rid).remove();
+   }
